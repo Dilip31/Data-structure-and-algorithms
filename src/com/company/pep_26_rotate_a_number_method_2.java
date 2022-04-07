@@ -22,22 +22,14 @@ public class pep_26_rotate_a_number_method_2 {
         }
 
         r=r%digitsofn;
-if (r<0)
-{
-    r=r+digitsofn;
-}
 
-        int div=1;
-        int multiplier=1;
-        for (int i=1;i<=digitsofn;i++)
+        if (r<0)
         {
-            if (i<=r)
-            {
-                div=div*10;
-            }else {
-                multiplier=multiplier*10;
-            }
+            r=r+digitsofn;
         }
+
+        int div=(int)Math.pow(10,r);
+        int multiplier=(int)Math.pow(10,digitsofn-r);
 
         int qu=n/div;
         int rem=n%div;
